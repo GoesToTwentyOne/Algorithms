@@ -45,7 +45,4 @@ For example, a complete graph with 4 nodes would have 4*(4-1)/2 = 6 edges, while
 
 ##
 Convert the following Adjacency Matrix into an Adjacency List and draw the graph.
-[1 0 0 1]
-[1 0 1 0]
-[0 1 0 1]
-[0 0 1 1]
+$\begin{bmatrix}X\\Y\end{bmatrix}$
