@@ -42,4 +42,4 @@ In a complete graph, every node is connected to every other node by an edge. The
 However, each edge is counted twice, once for each of the two nodes that it connects. Therefore, the total number of edges in a complete graph is n*(n-1)/2.
 
 For example, a complete graph with 4 nodes would have 4*(4-1)/2 = 6 edges, while a complete graph with 6 nodes would have 6*(6-1)/2 = 15 edges.
-|1|0|0|1|
+| 1  | 0 | 0 | 1 |
