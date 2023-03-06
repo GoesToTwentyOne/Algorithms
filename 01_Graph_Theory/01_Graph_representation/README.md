@@ -42,5 +42,10 @@ In a complete graph, every node is connected to every other node by an edge. The
 However, each edge is counted twice, once for each of the two nodes that it connects. Therefore, the total number of edges in a complete graph is n*(n-1)/2.
 
 For example, a complete graph with 4 nodes would have 4*(4-1)/2 = 6 edges, while a complete graph with 6 nodes would have 6*(6-1)/2 = 15 edges.
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269 | 254 |
+
+##
+Convert the following Adjacency Matrix into an Adjacency List and draw the graph.
+1 0 0 1
+1 0 1 0
+0 1 0 1
+0 0 1 1
