@@ -136,7 +136,7 @@ In conclusion, a directed acyclic graph (DAG) is a type of directed graph that d
 
 
 
-
+\
 ## Key Questions:
 
 ## A connected planar graph having 6 vertices, 7 edges contains _____________ regions.Hint : search for euler equation for vertices edge relationship
