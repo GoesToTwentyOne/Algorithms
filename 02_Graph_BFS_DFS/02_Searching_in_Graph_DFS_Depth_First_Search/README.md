@@ -9,12 +9,12 @@ The DFS algorithm starts by visiting a specific vertex in the graph and marking 
 
 ## Here is the pseudocode for the DFS algorithm:
 DFS(graph, source)
-          Initiate an array called "visited"
-          mark visited[source]=1
-          print the node source
-          for all adjacent nodes of "source":
-                  if visited[adj_node]==0:
-                            call DFS(adj_node)
+          - Initiate an array called "visited"
+          - mark visited[source]=1
+          - print the node source
+          - for all adjacent nodes of "source":
+                  - if visited[adj_node]==0:
+                            - call DFS(adj_node)
 ## Complexity Analysis from pseudocode
 - Time Complexity=O(V+E)
 - Space Complexity=O(V)
