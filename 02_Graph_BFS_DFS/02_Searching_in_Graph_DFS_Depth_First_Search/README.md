@@ -8,13 +8,15 @@ DFS is a graph traversal algorithm that explores all the vertices of a graph by 
 The DFS algorithm starts by visiting a specific vertex in the graph and marking it as visited. It then recursively visits all the neighbors of that vertex that have not been visited and marks them as visited. It continues this process until all the vertices in the graph have been visited.
 
 ## Here is the pseudocode for the DFS algorithm:
+```plaintext
 DFS(graph, source)
-          Initiate an array called "visited"
-          mark visited[source]=1
-          print the node source
-          for all adjacent nodes of "source":
-                  if visited[adj_node]==0:
-                            call DFS(adj_node)
+    - Initialize an array called "visited".
+    - Mark visited[source] = 1.
+    - Print the node source.
+    - For all adjacent nodes of source:
+        - If visited[adj_node] is equal to 0:
+            - Call DFS(adj_node).
+```
 ## Complexity Analysis from pseudocode
 - Time Complexity=O(V+E)
 - Space Complexity=O(V)
