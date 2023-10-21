@@ -22,6 +22,25 @@ void bfs(int src){
     }
 
 }
+/*
+Graph Representation
+=======================
+Topic:Adjacency List->Linked List/C++ vector
+A---------B
+        /  \
+       C---D
+0---------1
+        /  \
+       2---3
+#Total nodes= 4
+#Total edge = 4
+
+o--->[1]
+1--->[0,2,3]
+2--->[1,3]
+3--->[1,2]
+
+*/
 int main(){
     int node,edge;
     cin>>node>>edge;
