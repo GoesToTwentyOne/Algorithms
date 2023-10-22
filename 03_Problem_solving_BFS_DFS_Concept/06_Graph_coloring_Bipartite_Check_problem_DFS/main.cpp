@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-int const N = 1e5;
+int const N = 2e5;
 vector<int> adj_list[N];
 int visited[N];
 int color[N];

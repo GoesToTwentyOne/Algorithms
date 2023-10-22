@@ -19,20 +19,23 @@ bool is_inside(pair<int, int> coordinate) {
 bool is_wall(pair<int, int> coordinate) {
     int x = coordinate.first;
     int y = coordinate.second;
-    return (maze[x][y] == -1);
+    if (maze[x][y] == -1){
+        return true;
+    }
+    return false;
 }
 
 void bfs(pair<int, int> src) {
-    vector<pair<int, int>> q;
+    queue<pair<int, int>> q;
     visited[src.first][src.second] = 1;
     level[src.first][src.second] = 0;
-    q.push_back(src);
+    q.push(src);
 
     while (!q.empty()) {
         pair<int, int> head = q.front();
         int x = head.first;
         int y = head.second;
-        q.pop_back();
+        q.pop();
 
         for (int i = 0; i < 4; i++) {
             int new_x = x + dx[i];
@@ -42,7 +45,7 @@ void bfs(pair<int, int> src) {
             if (is_inside(adj_node) && !is_wall(adj_node) && visited[new_x][new_y] == 0) {
                 visited[new_x][new_y] = 1;
                 level[new_x][new_y] = level[x][y] + 1;
-                q.push_back(adj_node);
+                q.push(adj_node);
             }
         }
     }
