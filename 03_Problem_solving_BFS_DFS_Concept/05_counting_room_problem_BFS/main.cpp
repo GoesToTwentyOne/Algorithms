@@ -8,7 +8,12 @@ int dx[4] = {0, 0, -1, 1};
 int dy[4] = {1, -1, 0, 0};
 int n, m;
 pair<int, int> src, dst;
-
+/*bool is_inside(pair<int, int> coordinate) {
+    int x = coordinate.first;
+    int y = coordinate.second;
+    return (x >= 0 && x < n && y >= 0 && y < m);
+}
+*/
 bool is_inside(pair<int, int> coordinate) {
     int x = coordinate.first;
     int y = coordinate.second;
