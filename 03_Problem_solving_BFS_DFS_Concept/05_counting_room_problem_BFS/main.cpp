@@ -13,7 +13,11 @@ bool is_inside(pair<int, int> coordinate) {
     int y = coordinate.second;
     return (x >= 0 && x < n && y >= 0 && y < m);
 }
-
+/*bool is_inside(pair<int, int> coordinate) {
+    int x = coordinate.first;
+    int y = coordinate.second;
+    return (x >= 0 && x < n && y >= 0 && y < m);
+}*/
 bool is_wall(pair<int, int> coordinate) {
     int x = coordinate.first;
     int y = coordinate.second;
