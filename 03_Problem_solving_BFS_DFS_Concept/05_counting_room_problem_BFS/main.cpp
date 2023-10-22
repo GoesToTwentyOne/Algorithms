@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 2002;
+const int N = 2e5;
 int maze[N][N];
 int visited[N][N];
 int dx[4] = {0, 0, -1, 1};
