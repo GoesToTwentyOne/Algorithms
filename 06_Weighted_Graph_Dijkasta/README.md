@@ -17,7 +17,7 @@ Dijkstra's Algorithm is a widely-used algorithm for finding the shortest path in
 
 Dijkstra's Algorithm, developed by Edsger W. Dijkstra in 1956, is a greedy algorithm used to find the shortest path between nodes in a graph, particularly in the presence of non-negative edge weights. It is widely employed in various applications, including network routing, transportation, and computer science.
 
-### Pseudocode
+### Pseudocode 1
 
 ```plaintext
 # Dijkstra's Algorithm Pseudocode
@@ -33,24 +33,59 @@ if d[u] + c(u, v) < d[v]:
 
 */
 
-// Space Complexity: O(n)
-// Time Complexity: O(n^2)
+// Space Complexity: O(n)/O(V)
+// Time Complexity: O(n^2)/O(V^2)
 
-- Create a distance array "d".
-- Initialize all values of "d" to infinity.
-- Set d[src] = 0.
-- Create a visited array and mark all nodes as unvisited.
+- create a distance array "d"
+- initialize all values of "d" to infinity 
+- d[src] = 0
+- create a visited array and mark all nodes as unvisited
 
-- For i = 0 to n - 1:
-    - Pick the "unvisited" node with the minimum d[node].
-    - Mark visited[node] = 1.
-    - For all adjacent nodes adj_node of node:
-        - If d[node] + c(node, adj_node) < d[adj_node]:
-            - Update d[adj_node] to d[node] + c(node, adj_node).
+- for i = 0  to n - 1:
+    - pick the "unvisited" node with minimum d[node] 
+    - visited[node] = 1
+    - for all adj_node of node:
+        - if d[node] + c(node, adj_node) < d[adj_node]:
+            - d[adj_node] = d[node] + c(node, adj_node)
 
 - Output array "d".
 
+```
 
+### Pseudocode 2 Optimization
+
+```plaintext
+# Dijkstra's Algorithm Pseudocode
+
+// Input: Weighted graph and a source node
+// Output: Distance of all nodes from the source
+
+/*
+u -> v
+
+if d[u] + c(u, v) < d[v]:
+    d[v] = d[u] + c(u, v)
+
+*/
+
+// Space Complexity: O(n)/O(V)
+// Time Complexity: O(n^2)/O(V^2)
+
+- create a distance array "d"
+- initialize all values of "d" to infinity 
+- d[src] = 0
+- create a visited array and mark all nodes as unvisited
+
+- for i = 0  to n - 1:
+    - pick the "unvisited" node with minimum d[node] 
+    - visited[node] = 1
+    - for all adj_node of node:
+        - if d[node] + c(node, adj_node) < d[adj_node]:
+            - d[adj_node] = d[node] + c(node, adj_node)
+
+- Output array "d".
+
+```
 ## Time and Space Complexity
 
 - **Time Complexity**: O(n^2) for a simple implementation or O(E + V log V) when using a priority queue or min-heap.
