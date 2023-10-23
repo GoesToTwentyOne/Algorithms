@@ -41,10 +41,10 @@ if d[u] + c(u, v) < d[v]:
 - d[src] = 0
 - create a visited array and mark all nodes as unvisited
 
-- for i = 0  to n - 1:
+- for i = 0  to n - 1: O(n)
     - pick the "unvisited" node with minimum d[node] 
     - visited[node] = 1
-    - for all adj_node of node:
+    - for all adj_node of node:  O(E)  | O(n)
         - if d[node] + c(node, adj_node) < d[adj_node]:
             - d[adj_node] = d[node] + c(node, adj_node)
 
@@ -55,10 +55,8 @@ if d[u] + c(u, v) < d[v]:
 ### Pseudocode 2 Optimization
 
 ```plaintext
-# Dijkstra's Algorithm Pseudocode
-
-// Input: Weighted graph and a source node
-// Output: Distance of all nodes from the source
+// input -> a weighted graph and a source
+// ouput -> distance of all nodes from the source
 
 /*
 u -> v
@@ -68,22 +66,39 @@ if d[u] + c(u, v) < d[v]:
 
 */
 
-// Space Complexity: O(n)/O(V)
-// Time Complexity: O(n^2)/O(V^2)
 
-- create a distance array "d"
-- initialize all values of "d" to infinity 
+// space complexity -> O(m)
+// time complexity ===> O(m log n)
+
+- create a distance array "d"  
+- initialize all values of "d" to infinity  -> O(n)
 - d[src] = 0
-- create a visited array and mark all nodes as unvisited
+- create a visited array and mark all nodes as unvisited -> O(n)
+- take an empty reverse priority_queue "pq"
+- pq.push({0, src})
 
-- for i = 0  to n - 1:
-    - pick the "unvisited" node with minimum d[node] 
-    - visited[node] = 1
-    - for all adj_node of node:
-        - if d[node] + c(node, adj_node) < d[adj_node]:
-            - d[adj_node] = d[node] + c(node, adj_node)
+- while the priority_queue is not empty: -> O(E)
+    - head_distance, head = pq.front() 
+    - pq.pop() -> O(log E)
+    - if visited[head] == 1: ignore
+    - visited[head] = 1
+    - for all adj_node of head: -> O(E)
+        - if d[head] + c(head, adj_node) < d[adj_node]:
+            - d[adj_node] = d[head] + c(head, adj_node)
+            - pq.push({ d[adj_node], adj_node }); -> O(log E)
 
-- Output array "d".
+- ouput array "d" 
+
+ 
+ O(n) + O(E log E) + O(E log E)
+ -> O(|E| log |E|) 
+ -> O(|E| log |V^2|)
+ -> O(2|E| log |V|)
+ -> O(|E| log |V|)   [base 2]
+
+
+
+
 
 ```
 ## Time and Space Complexity
