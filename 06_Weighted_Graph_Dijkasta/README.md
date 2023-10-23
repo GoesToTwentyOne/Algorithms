@@ -139,7 +139,24 @@ Dijkstra's Algorithm is used in a variety of applications, including:
 
 
 
-The code above demonstrates Dijkstra's Algorithm in Python.
+## Dijkstra's Limitation
+Dijkstra's algorithm is a widely used algorithm for finding the shortest path in a graph, particularly in scenarios where all edge weights are non-negative. However, it does have some limitations and assumptions that you should be aware of:
+
+1. Non-Negative Edge Weights: Dijkstra's algorithm assumes that all edge weights are non-negative. If there are negative edge weights in the graph, Dijkstra's algorithm can produce incorrect results.
+
+2. Single-Source, Single-Destination: Dijkstra's algorithm is typically used to find the shortest path from a single source vertex to a single destination vertex. It may not be the most efficient choice if you need to find shortest paths from one source to multiple destinations, as you would have to run the algorithm multiple times.
+
+3. Greedy Approach: Dijkstra's algorithm is a greedy algorithm, meaning it makes locally optimal choices at each step. This can lead to incorrect results if used in situations where global optimization is required, such as in graphs with negative weight cycles.
+
+4. Complexity: The time complexity of Dijkstra's algorithm is O(V^2) when using an adjacency matrix and O((V + E) * log(V)) when using a binary heap or Fibonacci heap data structure. This can be a limitation when dealing with very large graphs.
+
+5. Memory Usage: Dijkstra's algorithm requires a priority queue data structure to keep track of the vertices to visit. The memory requirements for this data structure can be significant, especially for large graphs.
+
+6. No Path Information: Dijkstra's algorithm finds the shortest path length but doesn't provide information about the actual path itself. If you need the path as well, you must maintain additional data structures during the algorithm's execution.
+
+7. Inefficient for Sparse Graphs: In graphs with few edges, Dijkstra's algorithm can be less efficient compared to other algorithms like the A* algorithm or Bidirectional Search.
+
+To address some of these limitations, various modifications and alternative algorithms have been developed, such as the Bellman-Ford algorithm for graphs with negative edge weights, and A* search for more efficient pathfinding in specific scenarios. The choice of algorithm depends on the specific characteristics and requirements of your problem.
 
 ## Performance
 
