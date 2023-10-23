@@ -157,11 +157,10 @@ Dijkstra's algorithm is a widely used algorithm for finding the shortest path in
 7. Inefficient for Sparse Graphs: In graphs with few edges, Dijkstra's algorithm can be less efficient compared to other algorithms like the A* algorithm or Bidirectional Search.
 
 To address some of these limitations, various modifications and alternative algorithms have been developed, such as the Bellman-Ford algorithm for graphs with negative edge weights, and A* search for more efficient pathfinding in specific scenarios. The choice of algorithm depends on the specific characteristics and requirements of your problem.
+8. Negative Edge
+9. Negative Cycle
 
-## Negative Edge| different results
-```
-<Graph indexType="custom" height="400" width="400" nodes={[{label:"1",center:{x:126.6,y:193.3}},{label:"2",center:{x:209.3,y:269.2}},{label:"3",center:{x:231.4,y:157.9}},{label:"4",center:{x:318.7,y:225}}]} edges={[{label:"10",source:0,target:1},{label:"5",source:0,target:2},{label:"-8",source:1,target:2},{label:"1",source:2,target:3}]} />
-```
+
 
 ## Performance
 

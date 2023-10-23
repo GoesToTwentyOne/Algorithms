@@ -10,6 +10,7 @@ int main(){
     int n;
     cin>>n;
     cout<<fibo(n);
+    
     return 0;
 
 }
