@@ -158,7 +158,30 @@ Dijkstra's algorithm is a widely used algorithm for finding the shortest path in
 
 To address some of these limitations, various modifications and alternative algorithms have been developed, such as the Bellman-Ford algorithm for graphs with negative edge weights, and A* search for more efficient pathfinding in specific scenarios. The choice of algorithm depends on the specific characteristics and requirements of your problem.
 
+## Negative Edge| 
+```markdown
+## Custom Graph Representation
+
+This `readme.md` provides a textual representation of a custom graph. To create a visual representation of the graph, you can use Graphviz and the DOT language. Below is a DOT representation of the graph:
+
+```dot
+digraph CustomGraph {
+  rankdir=LR;
+  node [shape=circle, width=0.5, height=0.5];
+  
+  "1" [pos="126.6,193.3!"];
+  "2" [pos="209.3,269.2!"];
+  "3" [pos="231.4,157.9!"];
+  "4" [pos="318.7,225!"];
+  
+  "1" -> "2" [label="10"];
+  "1" -> "3" [label="5"];
+  "2" -> "3" [label="-8"];
+  "3" -> "4" [label="1"];
+}
+```
 ## Performance
+
 
 Dijkstra's Algorithm has a time complexity of O(V^2) for the simple implementation where you search for the minimum distance in the distance array linearly. By using a priority queue or min-heap data structure, you can reduce the time complexity to O(E + V log V), where V is the number of vertices and E is the number of edges.
 
