@@ -158,28 +158,11 @@ Dijkstra's algorithm is a widely used algorithm for finding the shortest path in
 
 To address some of these limitations, various modifications and alternative algorithms have been developed, such as the Bellman-Ford algorithm for graphs with negative edge weights, and A* search for more efficient pathfinding in specific scenarios. The choice of algorithm depends on the specific characteristics and requirements of your problem.
 
-## Negative Edge| 
-```markdown
-## Custom Graph Representation
-
-This `readme.md` provides a textual representation of a custom graph. To create a visual representation of the graph, you can use Graphviz and the DOT language. Below is a DOT representation of the graph:
-
-```dot
-digraph CustomGraph {
-  rankdir=LR;
-  node [shape=circle, width=0.5, height=0.5];
-  
-  "1" [pos="126.6,193.3!"];
-  "2" [pos="209.3,269.2!"];
-  "3" [pos="231.4,157.9!"];
-  "4" [pos="318.7,225!"];
-  
-  "1" -> "2" [label="10"];
-  "1" -> "3" [label="5"];
-  "2" -> "3" [label="-8"];
-  "3" -> "4" [label="1"];
-}
+## Negative Edge| different results
 ```
+<Graph indexType="custom" height="400" width="400" nodes={[{label:"1",center:{x:126.6,y:193.3}},{label:"2",center:{x:209.3,y:269.2}},{label:"3",center:{x:231.4,y:157.9}},{label:"4",center:{x:318.7,y:225}}]} edges={[{label:"10",source:0,target:1},{label:"5",source:0,target:2},{label:"-8",source:1,target:2},{label:"1",source:2,target:3}]} />
+```
+
 ## Performance
 
 
