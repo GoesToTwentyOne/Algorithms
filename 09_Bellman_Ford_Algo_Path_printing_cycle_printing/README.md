@@ -62,6 +62,12 @@ Here's a simplified pseudocode representation of the Bellman-Ford algorithm:
 
 ```plaintext
 The pseudocode you've provided describes the Bellman-Ford algorithm for finding the shortest distances from a source node to all other nodes in a weighted graph. While the core algorithm is correct, there's a small issue with the time complexity analysis you've provided. The time complexity is not necessarily O(E*V), but it's usually O(V*E) because the order of the nested loops should be considered.
+- Input -> A weighted graph and a src node (with no negative cycle)
+- Output -> Shortest distance from src node to all other nodes
+
+Relaxation Formula
+	d[u]+c(u,v) < d[v]
+	=> d[v]=d[u]+c(u,v)
 
 Here's the corrected analysis:
 
