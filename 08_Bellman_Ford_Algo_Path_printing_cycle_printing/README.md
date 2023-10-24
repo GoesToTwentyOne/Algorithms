@@ -56,7 +56,7 @@ The algorithm performs (V-1) iterations, where V is the number of vertices in th
 
 After (V-1) iterations, the algorithm guarantees that the array of distances contains the shortest paths from the source vertex to all other vertices in the graph.
 
-## Pseudocode
+## Pseudocode 01 | without negative cycle
 
 Here's a simplified pseudocode representation of the Bellman-Ford algorithm:
 
@@ -87,6 +87,42 @@ Here's the corrected analysis:
 The time complexity is indeed O(V*E) or O(|V| * |E|), not O(E*V), and in the worst case, it can be O(n^3) if there are O(n^2) edges.
 So, to clarify, the time complexity of the Bellman-Ford algorithm is O(V*E) or O(n^2) for dense graphs, and it can go up to O(n^3) for the worst-case scenario when there are many edges.
 ```
+## Pseudocode 02 | negative cycle
+
+Here's a simplified pseudocode representation of the Bellman-Ford algorithm:
+
+```plaintext
+The pseudocode you've provided describes the Bellman-Ford algorithm for finding the shortest distances from a source node to all other nodes in a weighted graph. While the core algorithm is correct, there's a small issue with the time complexity analysis you've provided. The time complexity is not necessarily O(E*V), but it's usually O(V*E) because the order of the nested loops should be considered.
+- Input -> A weighted graph and a src node (with no negative cycle)
+- Output -> Shortest distance from src node to all other nodes
+
+Relaxation Formula
+	d[u]+c(u,v) < d[v]
+	=> d[v]=d[u]+c(u,v)
+
+Here's the corrected analysis:
+
+- Create a distance array "d" with all values set to infinity. O(n)
+- Set d[src] = 0  O(1)
+- set negative_cycle = false
+- For i = 1 to n: O(V)
+  - For all edges (u, v, w): O(E)
+    - If d[u] + w < d[v]: O(1)
+      - Update d[v] = d[u] + w  O(1)
+	  - if i == n:
+	  		- negative_cycle=true
+- print negative_cycle Exist
+- Print the distance array "d"  O(n)
+
+- Time Complexity -> O(E*V)
+		- -> O(|E| *|V|)
+		- -> O(n^3)
+- Space Complexity -> O(n)
+
+The time complexity is indeed O(V*E) or O(|V| * |E|), not O(E*V), and in the worst case, it can be O(n^3) if there are O(n^2) edges.
+So, to clarify, the time complexity of the Bellman-Ford algorithm is O(V*E) or O(n^2) for dense graphs, and it can go up to O(n^3) for the worst-case scenario when there are many edges.
+```
+
 
 ## Time Complexity
 
