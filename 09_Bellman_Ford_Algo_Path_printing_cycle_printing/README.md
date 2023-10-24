@@ -84,7 +84,7 @@ Here's the corrected analysis:
 		- -> O(n^3)
 - Space Complexity -> O(n)
 
-- The time complexity is indeed O(V*E) or O(|V| * |E|), not O(E*V), and in the worst case, it can be O(n^3) if there are O(n^2) edges.
+The time complexity is indeed O(V*E) or O(|V| * |E|), not O(E*V), and in the worst case, it can be O(n^3) if there are O(n^2) edges.
 So, to clarify, the time complexity of the Bellman-Ford algorithm is O(V*E) or O(n^2) for dense graphs, and it can go up to O(n^3) for the worst-case scenario when there are many edges.
 ```
 
