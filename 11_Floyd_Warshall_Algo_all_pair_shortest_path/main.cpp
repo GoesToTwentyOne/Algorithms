@@ -18,7 +18,7 @@ void floyd_warshall(int node, int edge) {
     }
     for( int i=1;i<=node;i++){
     d[i][i] = 0;
-}
+    }
 
     for(int k = 1; k <= node; k++) {
         for(int u = 1; u <= node; u++) {
