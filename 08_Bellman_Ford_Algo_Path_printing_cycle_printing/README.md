@@ -128,6 +128,74 @@ So, to clarify, the time complexity of the Bellman-Ford algorithm is O(V*E) or O
 
 The time complexity of the Bellman-Ford algorithm is O(V * E), where V is the number of vertices and E is the number of edges in the graph. This makes it less efficient than some other shortest path algorithms, like Dijkstra's algorithm. However, Bellman-Ford is more versatile since it can handle graphs with negative-weight edges and detect negative-weight cycles.
 
+## Pseudocode 03 | negative cycle printing  and path printing 
+
+Here's a simplified pseudocode representation of the Bellman-Ford algorithm:
+
+```plaintext
+The pseudocode you've provided describes the Bellman-Ford algorithm for finding the shortest distances from a source node to all other nodes in a weighted graph. While the core algorithm is correct, there's a small issue with the time complexity analysis you've provided. The time complexity is not necessarily O(E*V), but it's usually O(V*E) because the order of the nested loops should be considered.
+- Input -> A weighted graph, a src node and a destination node
+- Output -> Shortest distance from src node to all other nodes. path printing and cycle printing
+
+Relaxation Formula
+	d[u]+c(u,v) < d[v]
+	=> d[v]=d[u]+c(u,v)
+
+Here's the corrected analysis:
+
+- Create a distance array "d" with all values set to infinity. O(n)
+- Create a parent array "parent" with all values set to zero. O(n)
+- Set d[src] = 0  O(1)
+- set negative_cycle = false
+- last_updated_node = -1
+- For i = 1 to n: O(V)
+  - For all edges (u, v, w): O(E)
+    - If d[u] + w < d[v]: O(1)
+      - Update d[v] = d[u] + w  O(1)
+	  - parent[v]=u
+	  - if i == n:
+	  		- negative_cycle=true
+			- last_updated_node= v
+
+- if negative_cycle == false: O(V)
+	- Print the distance array "d"  O(n)
+	- declare a vector "path"
+	- selected_node = destination_node
+	- while(true):
+		- path.push_back(selected_node)
+		- if selected_node ==  src:
+			break
+		- selected_node = parent[selected_node]
+	- reverse the vector "path"
+	- print the vector "path"
+
+- else:
+	- print negative_cycle Exist
+	- selected_node = last_updated_node
+	- For i=1 to n-1: O(V)
+		- selected_node = parent[selected_node]
+	- declare a vector "cycle"
+	- cycle.push_back(selected_node)
+	- while(true): O(V)
+		- selected_node = parent[selected_node]
+		-  cycle.push_back(selected_node)
+		- if selected_node == updated_node:
+			- break
+	- reverse the "cycle"
+	-  print the "cycle"
+
+
+
+- Time Complexity -> O(E*V)
+		- -> O(|E| *|V|)
+		- -> O(n^3)
+- Space Complexity -> O(n)
+
+The time complexity is indeed O(V*E) or O(|V| * |E|), not O(E*V), and in the worst case, it can be O(n^3) if there are O(n^2) edges.
+So, to clarify, the time complexity of the Bellman-Ford algorithm is O(V*E) or O(n^2) for dense graphs, and it can go up to O(n^3) for the worst-case scenario when there are many edges.
+```
+
+
 ## Applications
 
 The Bellman-Ford algorithm has several real-world applications, including:
