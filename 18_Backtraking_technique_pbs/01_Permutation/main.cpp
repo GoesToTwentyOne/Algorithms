@@ -1,3 +1,15 @@
+// backtrack(state) {
+//   if solution_found(state) {
+//     --> add state to answer
+//     --> return
+//   }
+
+//   for all valid candidates {
+//     --> add candidate to state
+//     --> backtrack(state)
+//     --> remove candidate from state
+//   }
+// }
 #include <bits/stdc++.h>
 using namespace std;
 int n;
