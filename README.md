@@ -1,6 +1,6 @@
 # Algorithms Teaching Repository
 
-Welcome to the Data Structures and Algorithms Teaching Repository! This repository is a comprehensive and educational resource for learning data structures and algorithms. Our mission is to make these fundamental concepts accessible to learners of all levels and empower them with the knowledge and skills necessary to excel in the world of programming.
+Welcome to the Data Structures and Algorithms Learning Repository! This repository is a comprehensive and educational resource for learning data structures and algorithms. Our mission is to make these fundamental concepts accessible to learners of all levels and empower them with the knowledge and skills necessary to excel in the world of programming.
 
 ## Inspiration
 
